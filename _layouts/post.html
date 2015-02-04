@@ -1,0 +1,16 @@
+---
+layout: default
+---
+
+<div class="wrapper-post">
+  <article class="post">
+    <h1 class="post-title sr">{{ page.title }}</h1>
+
+    <time datetime="{{ page.date | date_to_xmlschema }}" class="page-date">{{ page.date | date: "%-m/%-d/%Y" }}</time>
+
+    <div class="post-content">
+      {{ content }}
+    </div>
+  </article>
+</div>
+
