@@ -1,0 +1,18 @@
+# Permalinks
+permalink:              pretty
+relative_permalinks:    true
+
+# Setup
+title:                  Texts From Joe
+tagline:                Messages from my father in law, a retired Brooklyn bus driver
+url:                    http://textsfromjoe.com
+paginate:               10
+baseurl:                /
+author:
+  name:                 Brian Talbot
+  url:                  https://twitter.com/talbs
+  email:                hello.talbs@gmail.com
+
+# Custom vars
+github:
+  repo:                 https://github.com/talbs/textsfromjoe.com
