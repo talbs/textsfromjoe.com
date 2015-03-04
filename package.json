@@ -1,0 +1,29 @@
+{
+  "name": "mise-en-place",
+  "version": "0.0.1",
+  "description": "Gulp front end workflow with common tasks and scenarios",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/talbs/mise-en-place.git"
+  },
+  "devDependencies": {
+    "browser-sync": "latest",
+    "del": "latest",
+    "gulp": "latest",
+    "gulp-autoprefixer": "latest",
+    "gulp-changed": "latest",
+    "gulp-concat": "latest",
+    "gulp-filesize": "latest",
+    "gulp-imagemin": "latest",
+    "gulp-jshint": "latest",
+    "gulp-minify-css": "latest",
+    "gulp-notify": "latest",
+    "gulp-sass": "latest",
+    "gulp-sourcemaps": "latest",
+    "gulp-uglify": "latest",
+    "gulp-util": "latest",
+    "lodash": "latest",
+    "require-dir": "latest",
+    "run-sequence": "latest"
+  }
+}
