@@ -2,7 +2,7 @@
 permalink:              pretty
 relative_permalinks:    true
 
-# Setup
+# Meta
 title:                  Texts From Joe
 tagline:                Messages from my father in law, a retired Brooklyn bus driver
 url:                    http://textsfromjoe.com
@@ -12,6 +12,9 @@ author:
   name:                 Brian Talbot
   url:                  https://twitter.com/talbs
   email:                hello.talbs@gmail.com
+
+# Local Settings
+exclude:                ["node_modules", "gulpfile.js", "package.json"]
 
 # Custom vars
 github:
