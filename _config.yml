@@ -14,7 +14,7 @@ author:
   email:                hello.talbs@gmail.com
 
 # Local Settings
-exclude:                ["node_modules", "gulpfile.js", "package.json"]
+exclude:                ["node_modules", "gulpfile.js", "gulp", "package.json"]
 
 # Custom vars
 github:
