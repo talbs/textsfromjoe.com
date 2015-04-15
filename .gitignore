@@ -4,6 +4,8 @@ _site
 .ruby-version
 build
 node_modules
+.sass-cache
+gulp/util
 
 # Numerous always-ignore extensions
 *.diff
