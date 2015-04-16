@@ -1,10 +1,10 @@
 # Permalinks
-permalink:              pretty
+permalink:              /:title
 relative_permalinks:    true
 
 # Meta
 title:                  Texts From Joe
-tagline:                Messages from my father in law, a retired Brooklyn bus driver
+tagline:                Messages sent from my father, a retired Brooklyn, NY bus driver
 url:                    http://textsfromjoe.com
 paginate:               10
 baseurl:                /
