@@ -1,2 +1,378 @@
 // ------------------------------
 // textsfromjoe.com utilities
+
+// ------------------------------
+// #FUNCTIONS
+// ------------------------------
+
+// ------------------------------
+// #MIXINS
+// ------------------------------
+
+// ------------------------------
+// #CONFIG
+// ------------------------------
+$em-base:           18; // deliberately sets bourbon-based em-base (http://bourbon.io/docs/#em-base)
+
+// grid - variables
+$baseline:          20;
+$grid-width:        rem(1050);
+// grid-width:      ~1050px
+// column-width:    ~60px
+// gutter-width:    ~30px
+
+// grid - breakpoints
+$bp-medium:         960px;
+$bp-large:           1280px;
+
+// colors
+$transparent:       rgba(0, 0, 0, 0);
+$gray:              rgb(85, 70, 70);
+$pink:              rgb(234, 106, 101);
+$green:             rgb(64, 182, 93);
+$blue:              rgb(42, 157, 215);
+$orange:            rgb(228, 93, 78);
+
+// grid - configuration (susy-based)
+$susy: (
+    use-custom clearfix: true,
+    use-custom background-image: true,
+    use-custom background-options: true,
+    use-custom breakpoint: true,
+
+    global-box-sizing: border-box,
+    math: fluid,
+    output: float,
+
+    columns: 12,
+    gutters: .5,
+    container: $grid-width,
+
+    debug: (
+        image: show,
+        color: blue,
+        output: overlay,
+        toggle: top right,
+    ),
+);
+
+$palettes: (
+    blue: (
+        base:       $blue,
+        light:      tint($blue, 33%),
+        x-light:    tint($blue, 66%),
+        dark:       shade($blue, 33%),
+        x-dark:     shade($blue, 66%),
+        sat:        saturate($blue, 33%),
+        trans:      transparentize($blue, 0.25),
+        x-trans:    transparentize($blue, 0.75),
+    ),
+    pink: (
+        base:       $pink,
+        light:      tint($pink, 33%),
+        x-light:    tint($pink, 66%),
+        dark:       shade($pink, 33%),
+        x-dark:     shade($pink, 66%),
+        sat:        saturate($pink, 33%),
+        trans:      transparentize($pink, 0.25),
+        x-trans:    transparentize($pink, 0.75),
+    ),
+    green: (
+        base:       $green,
+        light:      tint($green, 33%),
+        x-light:    tint($green, 66%),
+        dark:       shade($green, 33%),
+        x-dark:     shade($green, 66%),
+        sat:        saturate($green, 33%),
+        trans:      transparentize($green, 0.25),
+        x-trans:    transparentize($green, 0.75),
+    ),
+    gray: (
+        base:       $gray,
+        light:      tint($gray, 33%),
+        x-light:    tint($gray, 66%),
+        dark:       shade($gray, 33%),
+        x-dark:     shade($gray, 66%),
+        sat:        saturate($gray, 33%),
+        trans:      transparentize($gray, 0.25),
+        x-trans:    transparentize($gray, 0.75),
+        white:    tint($gray, 95%),
+        white-t:    rgb(255,255,255),
+        black:    shade($gray, 95%),
+        black-t:    rgb(255,255,255),
+    ),
+);
+
+// typography - font imports
+@import url(http://fonts.googleapis.com/css?family=Roboto:500,100,300,700,400); // Roboto - http://www.google.com/fonts/specimen/Roboto
+
+// typography - font stack
+$font-stack-sans-serif: 'Roboto', sans-serif;
+
+// typography - font scale
+$modular-scale-ratio: $major-second;
+
+// typography: line-height
+$line-heights: (
+    xx-large:   1.40,
+    x-large:    1.40,
+    large:      1.50,
+    mid-large:  1.60,
+    mid-small:  1.60,
+    small:      1.5,
+    base:       1.5,
+    none:       0
+);
+
+// typography: weights
+$font-weights: (
+    normal:     400,
+    light:      300,
+    x-light:    100,
+    semi-bold:  500,
+    bold:       700
+);
+
+// typography: letter-spacing
+$letter-spacing: (
+    normal:     0,
+    xx-tight:   -3,
+    x-tight:    -2,
+    tight:      -.095,
+    loose:      -.075,
+    x-loose:    -.025,
+    xx-loose:   3
+);
+
+// animation timing
+$timing: (
+    base:       0.75s,
+    slow:       1s,
+    x-slow:     1.5s,
+    fast:       0.5s,
+    x-fast:     0.25s,
+);
+
+// config - headings
+$heading-font-family: $font-stack-sans-serif;
+$heading-color: palette(gray, dark);
+
+// config - copy
+$copy-font-family: $font-stack-sans-serif;
+$copy-color: palette(gray, white);
+
+// z-index depth scale
+$z-depths: (
+    base:           0,
+    mid-back:       -10,
+    back:           -100,
+    very-back:      -1000,
+    mid-front:      10,
+    front:          100,
+    very-front:     1000
+);
+
+// spacing
+$spacing: (
+    base:           $baseline,
+    mid-small:      ($baseline*0.75),
+    small:          ($baseline/2),
+    x-small:        ($baseline/4),
+    mid-large:      ($baseline*1.5),
+    large:          ($baseline*2),
+    x-large:        ($baseline*3),
+    xx-large:       ($baseline*4)
+);
+
+
+// ------------------------------
+// #FUNCTIONS
+// ------------------------------
+// get colors from defined palettes map values
+@function palette($palette, $tone: 'base') {
+    @return map-get(map-get($palettes, $palette), $tone);
+}
+
+// get line-heights from defined map values
+@function line-height($key) {
+  @if map-has-key($line-heights, $key) {
+    @return map-get($line-heights, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $line-heights.";
+  @return null;
+}
+
+// get font sizes from defined map values
+@function font-weight($key) {
+  @if map-has-key($font-weights, $key) {
+    @return map-get($font-weights, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $font-weights.";
+  @return null;
+}
+
+// get letter spacing from defined map values
+@function letter-spacing($key) {
+  @if map-has-key($letter-spacing, $key) {
+    @return map-get($letter-spacing, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $letter-spacing.";
+  @return null;
+}
+
+// get z-indexes from defined map values
+@function z-index($key) {
+  @if map-has-key($z-depths, $key) {
+    @return map-get($z-depths, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $z-depths.";
+  @return null;
+}
+
+// get spacings from defined map values
+@function spacing($key) {
+  @if map-has-key($spacing, $key) {
+    @return rem(map-get($spacing, $key));
+  }
+
+  @warn "Unknown `#{$key}` in $spacing.";
+  @return null;
+}
+
+// get timing from defined map values
+@function timing($key) {
+  @if map-has-key($timing, $key) {
+    @return map-get($timing, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $timing.";
+  @return null;
+}
+
+
+// ------------------------------
+// #HELPERS
+// ------------------------------
+%state-disabled {
+    pointer-events: none;
+    outline: none;
+    cursor: default;
+}
+
+// presentational wrapper
+%wrapper {
+    @include clearfix();
+    width: 100%;
+}
+
+%link {
+    @include transition(all timing(x-fast) ease-in-out);
+    border-bottom: 1px solid $transparent;
+    color: palette(blue, base);
+    text-decoration: none;
+
+    // STATE: hover, active, focus
+    &:hover,
+    &:active,
+    &:focus {
+        border-bottom-color: palette(blue, sat);
+        color: palette(blue, sat);
+    }
+}
+
+// remove spacing from first/last children
+%clear-first-child {
+
+    &:first-child {
+        margin-top: 0;
+        padding-top: 0;
+        border-top: none;
+    }
+}
+
+%clear-last-child {
+
+    &:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+}
+
+// accessibility
+%a11y-hide {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+%a11y-hide-image-text {
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+}
+
+// add UI cue for non-native controls
+%fake-link {
+  cursor: pointer;
+}
+
+// reset non-content minded lists
+%no-list {
+  list-style: none;
+  text-indent: 0;
+}
+
+// pl-based reset - lists
+%reset-lists {
+    @extend %no-list;
+    margin: 0;
+    padding: 0;
+}
+
+%list-unstyled {
+    @extend %reset-lists;
+
+    li,
+    dt,
+    dd {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+%list-inline {
+    @extend %list-unstyled;
+
+    li,
+    dt,
+    dd {
+        display: inline-block;
+    }
+}
+
+// pl-based reset - headings
+%reset-headings {
+    margin: 0 0 spacing(small) 0;
+    font-family: $heading-font-family;
+    font-size:  modular-scale(1);
+    font-weight: font-weight(semi-bold);
+    line-height: line-height(base);
+}
+
+// pl-based reset - copy
+%reset-copy {
+    margin: 0 0 spacing(small) 0;
+    font-family: $copy-font-family;
+    font-size:  modular-scale(1);
+    line-height: line-height(large);
+}

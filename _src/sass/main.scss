@@ -4,7 +4,11 @@
 // ------------------------------
 // #VENDOR
 // ------------------------------
-// @import 'bourbon/bourbon';
+@import 'vendor/normalize';
+@import 'vendor/bourbon/bourbon';
+@import 'vendor/normalize';
+@import 'vendor/susy/susy';
+@import 'vendor/breakpoint/breakpoint';
 
 // ------------------------------
 // #UTILITIES

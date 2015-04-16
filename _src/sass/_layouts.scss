@@ -1,2 +1,63 @@
 // ------------------------------
 // textsfromjoe.com layouts
+
+// ------------------------------
+// #GENERAL
+// ------------------------------
+.wrapper--view {
+    margin: (gutter()*3) (gutter()*2);
+
+    @include susy-breakpoint($bp-medium, $susy) {
+        margin: (gutter()*2);
+    }
+}
+
+.wrapper--grid {
+    @include container;
+}
+
+.header--site {
+    text-align: center;
+
+    @include susy-breakpoint($bp-medium, $susy) {
+        text-align: left;
+    }
+}
+
+.content--aside {
+    @include span(12 last);
+    margin-bottom: spacing(large);
+
+    @include susy-breakpoint($bp-medium, $susy) {
+        @include span(4 at 5 last);
+    }
+}
+
+.content--main {
+    @include span(12 last);
+
+    @include susy-breakpoint($bp-medium, $susy) {
+        @include span(7 first);
+    }
+}
+
+.footer--site {
+    @include span(12);
+    margin-top: spacing(x-large);
+}
+
+.about {
+    display: none;
+
+    @include susy-breakpoint($bp-medium, $susy) {
+        display: block;
+    }
+}
+
+// ------------------------------
+// #LISTING
+// ------------------------------
+
+// ------------------------------
+// #CONVERSATION
+// ------------------------------
