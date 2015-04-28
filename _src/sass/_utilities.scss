@@ -22,8 +22,9 @@ $grid-width:        rem(1050);
 // gutter-width:    ~30px
 
 // grid - breakpoints
-$bp-medium:         960px;
-$bp-large:           1280px;
+$bp-medium:         768px;
+$bp-large:          1024px;
+$bp-huge:           1280px;
 
 // colors
 $transparent:       rgba(0, 0, 0, 0);
