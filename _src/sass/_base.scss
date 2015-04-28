@@ -1,2 +1,46 @@
 // ------------------------------
 // textsfromjoe.com base
+
+// ------------------------------
+// #RESET
+// ------------------------------
+* {
+    box-sizing: border-box;
+}
+
+// ------------------------------
+// #BASE
+// ------------------------------
+html, body {
+    height: 100%;
+    background: palette(gray, x-dark);
+    color: palette(gray, light);
+}
+
+// images
+img,
+picture {
+  max-width: 100%;
+  margin: 0;
+}
+
+// links
+a {
+    @extend %link;
+}
+
+// stateful
+.sr, .is-hidden {
+    @extend %a11y-hide;
+}
+
+// ------------------------------
+// #TYPOGRAPHY
+// ------------------------------
+p, ol, ul, li, dt, dd, blockquote {
+    @extend %reset-copy;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    @extend %reset-headings;
+}

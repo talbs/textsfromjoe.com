@@ -2,13 +2,18 @@
 layout: default
 ---
 
-<div class="wrapper-post">
-  <article class="post">
-    <h1 class="post-title sr">{{ page.title }}</h1>
+<div class="wrapper--conversation">
+  <article class="conversation">
+    <h1 class="conversation__title">{{ page.title }}</h1>
 
-    <time datetime="{{ page.date | date_to_xmlschema }}" class="page-date">{{ page.date | date: "%-m/%-d/%Y" }}</time>
+    <div class="conversation__meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}" class="conversation__date">
+          <span class="conversation__date__date">{{ page.date | date: "%-m/%-d/%y"}}</span>
+          <span class="conversation__date__time">{{ page.date | date: "%I:%M %p"}}</span>
+      </time>
+    </div>
 
-    <div class="post-content">
+    <div class="conversation__content">
       {{ content }}
     </div>
   </article>

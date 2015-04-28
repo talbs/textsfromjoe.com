@@ -5,21 +5,29 @@
 
   {% include head.html %}
 
-  <body class="">
-    <nav class="nav-skip sr">
-      <h2 class="nav-skip-title">Skip to:</h2>
-      <a class="action action-skip" href="#content-main">this page's main content</a>
+  <body class="view--{{ page.viewclass }}">
+    <nav class="nav--skip sr">
+      <h2 class="nav--skip__title">Skip to:</h2>
+      <a class="action action--skip" href="#content--main">this page's main content</a>
     </nav>
 
-    <div class="wrapper-view">
-      <div class="content content-aside">
-        {% include header.html %}
+    <div class="wrapper--view">
+      <div class="wrapper--grid">
+        <div class="content content--aside">
+          {% include header.html %}
+          {% include about.html %}
+        </div>
+
+        <hr class="sr">
+
+        <main class="content content--main" id="content--main">
+          {{ content }}
+        </main>
+
+        <hr class="sr">
+
         {% include footer.html %}
       </div>
-
-      <main class="content content-main" id="content-main">
-        {{ content }}
-      </main>
     </div>
 
     <script src="{{ site.baseurl }}js/main.js"></script>
