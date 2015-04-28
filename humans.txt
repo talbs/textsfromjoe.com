@@ -1,0 +1,23 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+/* TEAM */
+
+    Designer: Brian Talbot
+    Contact: hello.talbs [at] gmail.com
+    Site: talbs.me
+    Twitter: @talbs
+    From: Boston, MA, USA
+
+/* THANKS */
+
+    @mdo
+    @melistocrat
+
+/* SITE */
+
+    Last update: 2015/02/03
+    Standards : HTML5, CSS3
+    Components: Jekyll
+    Software: Sublime Text
+

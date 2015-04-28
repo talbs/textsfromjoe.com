@@ -1,0 +1,15 @@
+<header class="header--site">
+  {% if page.title == "Home" %}
+  <h1 class="header--site__title">
+    Texts from <span class="header--site__title__accent">Joe</span>
+  </h1>
+  <p class="header--site__tagline">{{ site.tagline }}</p>
+  {% else %}
+  <h2 class="header--site__title">
+    <a href="{{ site.baseurl }}">
+      Texts from <span class="header--site__title__accent">Joe</span>
+    </a>
+  </h2>
+  <p class="header--site__tagline">{{ site.tagline }}</p>
+  {% endif %}
+</header>

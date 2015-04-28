@@ -1,0 +1,21 @@
+# Permalinks
+permalink:              /:title
+relative_permalinks:    true
+
+# Meta
+title:                  Texts From Joe
+tagline:                Messages sent from my father, a retired Brooklyn, NY bus driver
+url:                    http://textsfromjoe.com
+paginate:               10
+baseurl:                /
+author:
+  name:                 Brian Talbot
+  url:                  https://twitter.com/talbs
+  email:                hello.talbs@gmail.com
+
+# Local Settings
+exclude:                ["node_modules", "gulpfile.js", "gulp", "package.json"]
+
+# Custom vars
+github:
+  repo:                 https://github.com/talbs/textsfromjoe.com
