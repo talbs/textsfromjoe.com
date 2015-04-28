@@ -5,7 +5,11 @@
 // #GENERAL
 // ------------------------------
 .wrapper--view {
-    padding: spacing(xx-large) spacing(x-large);
+    padding: spacing(x-large) spacing(large);
+
+    @include susy-breakpoint($bp-medium, $susy) {
+        padding: spacing(xx-large) spacing(x-large);
+    }
 }
 
 .wrapper--grid {
@@ -15,8 +19,18 @@
 .header--site {
     text-align: center;
 
-    @include susy-breakpoint($bp-medium, $susy) {
+    @include susy-breakpoint($bp-large, $susy) {
         text-align: left;
+    }
+}
+
+.header--site__title__prefix {
+    display: block;
+    margin-bottom: spacing(base);
+
+    @include susy-breakpoint($bp-large, $susy) {
+        display: inline;
+        margin-bottom: 0;
     }
 }
 
@@ -43,10 +57,10 @@
 }
 
 .about {
-    display: none;
+    text-align: center;
 
-    @include susy-breakpoint($bp-medium, $susy) {
-        display: block;
+    @include susy-breakpoint($bp-large, $susy) {
+        text-align: left;
     }
 }
 
