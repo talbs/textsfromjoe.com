@@ -5,11 +5,7 @@
 // #GENERAL
 // ------------------------------
 .wrapper--view {
-    margin: (gutter()*3) (gutter()*2);
-
-    @include susy-breakpoint($bp-medium, $susy) {
-        margin: (gutter()*2);
-    }
+    padding: spacing(xx-large) spacing(x-large);
 }
 
 .wrapper--grid {
