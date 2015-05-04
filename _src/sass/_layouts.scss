@@ -71,3 +71,10 @@
 // ------------------------------
 // #CONVERSATION
 // ------------------------------
+.conversation__meta {
+    text-align: center;
+
+    @include susy-breakpoint($bp-large, $susy) {
+        text-align: left;
+    }
+}

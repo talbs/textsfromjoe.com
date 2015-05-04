@@ -30,8 +30,7 @@
 .conversation__date {
     @include transition(color timing(x-fast) ease-in-out);
     position: relative;
-    top: -(rem(11));
-    margin-bottom: spacing(small);
+    top: -(rem(10));
     margin-left: spacing(mid-small);
     padding: spacing(small);
     font-size: modular-scale(-2);
